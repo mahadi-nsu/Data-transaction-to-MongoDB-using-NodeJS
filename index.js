@@ -41,7 +41,12 @@ async function createCourse() {
 
 
 async function getCourses() {
-    const courses = await Course.find();
+    const courses = await Course
+        .find({
+            //passing filter here
+            author: 'Mahadi',
+            isPublished: true
+        });
     console.log(courses);
 }
 
